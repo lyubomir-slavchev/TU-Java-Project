@@ -1,0 +1,18 @@
+package com.example.mymodel;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springdoc.core.GroupedOpenApi;
+import org.springdoc.core.customizers.OpenApiCustomiser;
+
+@Configuration
+public class SwaggerConfig {
+
+    @Bean
+    public GroupedOpenApi publicApi() {
+        return GroupedOpenApi.builder()
+                .group("spring")
+                .pathsToMatch("/api/**")
+                .build();
+    }
+}
